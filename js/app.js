@@ -1,14 +1,14 @@
 let btnInicio = document.getElementById("btnInicio")
-let btnPiedra = document.getElementById("btnPiedra")
-let btnPapel = document.getElementById("btnPapel")
-let btnTijera = document.getElementById("btnTijera")
-let selectorJugada = document.getElementById("selectorJuegada")
-let modalGanador = document.getElementById("modalGanador")
-let modalPerdedor = document.getElementById("modalPerdedor")
-let modalEmpate = document.getElementById("modalEmpate")
-let modalMovGanador = document.getElementById("modalMovGanador")
-let modalMovPerdedor = document.getElementById("modalMovPerdedor")
-let modalMovEmpate = document.getElementById("modalMovEmpate")
+    btnPiedra = document.getElementById("btnPiedra"),
+    btnPapel = document.getElementById("btnPapel"),
+    btnTijera = document.getElementById("btnTijera"),
+    selectorJugada = document.getElementById("selectorJuegada"),
+    modalGanador = document.getElementById("modalGanador"),
+    modalPerdedor = document.getElementById("modalPerdedor"),
+    modalEmpate = document.getElementById("modalEmpate"),
+    modalMovGanador = document.getElementById("modalMovGanador"),
+    modalMovPerdedor = document.getElementById("modalMovPerdedor"),
+    modalMovEmpate = document.getElementById("modalMovEmpate");
 let movimientoUsuario;
 
 const generadorMovimiento = () => Math.floor(Math.random() * 3) + 1;
@@ -69,20 +69,21 @@ function mostrarModalGanador(mensajeUsuario,mensajeComputadora) {
   movimientos.classList.add("lead","fs-3")
   movimientos.innerHTML = `
   <ul class="list-unstyled">
-    <li class="list-item">${mensajeUsuario}</li>
-    <li class="list-item">${mensajeComputadora}</li>
+    <li class="list-item fs-6">${mensajeUsuario}</li>
+    <li class="list-item fs-6">${mensajeComputadora}</li>
   </ul>`
   modalMovGanador.appendChild(movimientos)
   var modal = new bootstrap.Modal(modalGanador);
   modal.show();
+  
 }
 function mostrarModalPerdedor(mensajeUsuario,mensajeComputadora) {
   let movimientos = document.createElement("p")
   movimientos.classList.add("lead","fs-3")
   movimientos.innerHTML = `
   <ul class="list-unstyled">
-    <li class="list-item">${mensajeUsuario}</li>
-    <li class="list-item">${mensajeComputadora}</li>
+  <li class="list-item fs-6">${mensajeUsuario}</li>
+    <li class="list-item fs-6">${mensajeComputadora}</li>
   </ul>`
   modalMovPerdedor.appendChild(movimientos)
   var modal = new bootstrap.Modal(modalPerdedor);
@@ -93,15 +94,19 @@ function mostrarModalEmpate(mensajeUsuario,mensajeComputadora) {
   movimientos.classList.add("lead","fs-3")
   movimientos.innerHTML = `
   <ul class="list-unstyled">
-    <li class="list-item">${mensajeUsuario}</li>
-    <li class="list-item">${mensajeComputadora}</li>
+    <li class="list-item fs-6">${mensajeUsuario}</li>
+    <li class="list-item fs-6">${mensajeComputadora}</li>
   </ul>`
   modalMovEmpate.appendChild(movimientos)
   var modal = new bootstrap.Modal(modalEmpate);
   modal.show();
+  
 }
 
 function verGanador(){
+  modalMovGanador.innerHTML="";
+  modalMovPerdedor.innerHTML="";
+  modalMovEmpate.innerHTML="";
   const movimientoComputadora = selectorMovimiento(generadorMovimiento());
   const mensajeUsuario = escribirMovimiento("Usted", movimientoUsuario);
   const mensajeComputadora = escribirMovimiento("Computadora", movimientoComputadora);
@@ -118,18 +123,18 @@ function verGanador(){
 btnInicio.addEventListener("click",verSelector)
 
 btnPiedra.addEventListener("click",() => {
+
     movimientoUsuario = selectorMovimiento(parseInt(btnPiedra.value))
     verGanador();
     reiniciar();
-  })
-btnPapel.addEventListener("click",() => {
-    movimientoUsuario = selectorMovimiento(parseInt(btnPapel.value))
-    verGanador();
-    reiniciar();
-  })
+    })
+    btnPapel.addEventListener("click",() => {
+      movimientoUsuario = selectorMovimiento(parseInt(btnPapel.value))
+      verGanador();
+      reiniciar();
+    })
 btnTijera.addEventListener("click",() => {
     movimientoUsuario = selectorMovimiento(parseInt(btnTijera.value))
     verGanador();
     reiniciar();
   })
-
