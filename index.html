@@ -66,14 +66,39 @@
           <button type="button" class="btn btn-outline-success fs-1" id="btnTijera" value="3">✌🏻<span class="fs-6">Tijera</span></button>
         </div>
         </div>
-        <div class="modal fade" id="modalFinalizar" tabindex="-1" aria-labelledby="modalFinalizar" aria-hidden="true">
+        <div class="modal fade" id="modalGanador" tabindex="-1" aria-labelledby="modalGanador" aria-hidden="true">
           <div class="modal-dialog">
-            <div class="modal-content bg-dark">
+            <div class="modal-content text-bg-success bg-opacity-100">
               <div class="modal-header">
-                <h5 class="modal-title text-warning fs-2">Resultado</h5>
+                <h5 class="modal-title fs-2">Resultado</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body text-success fs-1">Ganador</div>
+              <div class="modal-body" id="modalMovGanador"></div>
+              <div class="modal-body fs-1">Ganador</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modalPerdedor" tabindex="-1" aria-labelledby="modalPerdedor" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content text-bg-danger bg-opacity-100">
+              <div class="modal-header">
+                <h5 class="modal-title fs-2">Resultado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="modalMovPerdedor"></div>
+              <div class="modal-body fs-1">Perdedor</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modalEmpate" tabindex="-1" aria-labelledby="modalEmpate" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content text-bg-secondary bg-opacity-100">
+              <div class="modal-header">
+                <h5 class="modal-title fs-2">Resultado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="modalMovEmpate"></div>
+              <div class="modal-body fs-1">Empate</div>
             </div>
           </div>
         </div>
